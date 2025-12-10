@@ -1,3 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}Todos los cursos{% endblock title %}
+
+
+{% block custom_styles %}
+    <link rel="stylesheet" href= {% static 'css/styles.css' %}/>
+{% endblock custom_styles %}
+
+
+{% block content %}
 
     <div class="layout">
 
@@ -143,3 +156,4 @@
     </div>
     <script src="./js/script.js"></script>
 
+{% endblock content %}
