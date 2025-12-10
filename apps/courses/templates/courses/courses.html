@@ -13,7 +13,6 @@
 {% block content %}
 
     <div class="layout">
-
         <div class="sidebar">
             <div class="logo">
                 <img src="{% static 'images/learn.png' %}" alt="Logo">
@@ -24,8 +23,6 @@
                 </li>
                 <li><a class="menu-option" href="courses.html"><i
                             class="fa-solid fa-chalkboard-user icon"></i><span>Cursos</span></a></li>
-
-
             </ul>
             <ul class="bottom-menu">
                 <li><a class="menu-option" href="#"><i class="fa-solid fa-question icon"></i><span>Soporte</span></a>
@@ -34,8 +31,6 @@
                 </li>
             </ul>
         </div>
-
-
         <!-- Main content -->
         <div class="main-content">
             <!-- Header -->
@@ -53,13 +48,12 @@
             <!-- Aquí va el contenido de la página -->
             <main>
                 <!-- === COURSE CARDS === -->
-
                 <div class="carousel-wrapper">
                     <div class="course-grid">
                         <div class="course-grid">
                             <!-- Card 1 -->
                             <div class="course-card">
-                                <a href="course_detail.html">
+                                <a href="{% url 'course_detail' %}">
                                     <img src="{% static 'images/curso_1.jpg' %}" alt="Course Image" class="course-img" />
                                     <div class="course-info">
                                         <div class="course-rating">
@@ -68,7 +62,6 @@
                                                 <span><i class="fa-solid fa-star"></i> 5.0</span>
                                             </div>
                                         </div>
-
                                         <h3 class="course-title">Three-month Course to Learn the Basics of Python and
                                             Start
                                             Coding.
@@ -76,13 +69,11 @@
                                         <div class="author"><img src="https://randomuser.me/api/portraits/women/68.jpg"
                                                 alt=""><span>Alison Walsh</span></div>
                                     </div>
-
                                 </a>
                             </div>
-
                             <!-- Card 2 -->
                             <div class="course-card">
-                                <a href="course_detail.html">
+                                <a href="{% url 'course_detail' %}">
                                     <img src="{% static 'images/curso_2.jpg' %}" alt="Course Image" class="course-img" />
                                     <div class="course-info">
                                         <div class="course-rating">
@@ -98,13 +89,11 @@
                                         <div class="author"><img src="https://randomuser.me/api/portraits/women/20.jpg"
                                                 alt=""><span>Patty Kutch</span></div>
                                     </div>
-
                                 </a>
                             </div>
-
                             <!-- Card 3 -->
                             <div class="course-card">
-                                <a href="course_detail.html">
+                                <a href="{% url 'course_detail' %}">
                                     <img src="{% static 'images/curso_3.jpg' %}" alt="Course Image" class="course-img" />
                                     <div class="course-info">
                                         <div class="course-rating">
@@ -119,16 +108,12 @@
                                             Outplay...</h3>
                                         <div class="author"><img src="https://randomuser.me/api/portraits/men/32.jpg"
                                                 alt=""><span>Alonzo Murray</span></div>
-
-
                                     </div>
-
                                 </a>
                             </div>
-
                             <!-- Card 4 -->
                             <div class="course-card">
-                                <a href="course_detail.html">
+                                <a href="{% url 'course_detail' %}">
                                     <img src="{% static 'images/curso_4.jpg' %}" alt="Course Image" class="course-img" />
                                     <div class="course-info">
                                         <div class="course-rating">
@@ -144,16 +129,15 @@
                                         <div class="author"><img src="https://randomuser.me/api/portraits/men/45.jpg"
                                                 alt=""><span>Gregory Harris</span></div>
                                     </div>
-
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </main>
         </div>
     </div>
-    <script src="./js/script.js"></script>
-
+    
 {% endblock content %}
+
+{% block scripts %}<script src="{% static 'js/script.js' %}"></script>{% endblock scripts %}
