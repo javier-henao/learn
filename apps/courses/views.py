@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 
+
 def course_list(request):
     courses = [
         {
@@ -45,82 +46,154 @@ def course_list(request):
         'courses': courses
     })
 
+
 def course_detail(request):
-    course = [
-        {
-            "course_title": "Python: Fundamentos hasta los Detalles",
-            "course_link": "course_lessons",
-            "course_image": "images/curso_1.jpg",
-            "info_course": {
-                "lessons": 60,
-                "duration": 12,
-                "instructor": "Alison Walsh",
+    course = {
+        'course_title': 'Python: Fundamentos hasta los Detalles',
+        'course_link': 'course_lessons',
+        'course_image': 'images/curso_1.jpg',
+
+        'info_course': {
+            'lessons': 60,
+            'duration': 12,
+            'instructor': 'Alison Walsh'
+        },
+
+        'course_content': [
+            {
+                'id': 1,
+                'name': 'Introducción a Python',
+                'lessons': [
+                    {
+                        'name': '¿Qué aprenderás en este curso de Python?',
+                        'type': 'video'
+                    },
+                    {
+                        'name': 'Instalación del entorno y primeros pasos',
+                        'type': 'article'
+                    }
+                ]
             },
-            "course_content": [
-                {
-                    "id": 1,
-                    "name": "Introducción a Python",
-                    "total_lessons": 2,
-                    "complete_lessons": 2,
-                    "lessons": [
-                        {"name": "¿Qué aprenderás en este curso de Python?",
-                            "type": "video"},
-                        {"name": "Instalación del entorno y primeros pasos",
-                            "type": "article"},
-                    ],
-                },
-                {
-                    "id": 2,
-                    "name": "Fundamentos del lenguaje",
-                    "total_lessons": 3,
-                    "complete_lessons": 3,
-                    "lessons": [
-                        {"name": "Variables, tipos de datos y operadores",
-                            "type": "video"},
-                        {"name": "Estructuras condicionales", "type": "video"},
-                        {"name": "Bucles y control de flujo", "type": "article"},
-                    ],
-                },
-                {
-                    "id": 3,
-                    "name": "Colecciones y manejo de datos",
-                    "total_lessons": 3,
-                    "complete_lessons": 3,
-                    "lessons": [
-                        {"name": "Listas y tuplas", "type": "video"},
-                        {"name": "Diccionarios y conjuntos", "type": "video"},
-                        {"name": "Comprensión de listas", "type": "article"},
-                    ],
-                },
-                {
-                    "id": 4,
-                    "name": "Funciones y módulos",
-                    "total_lessons": 3,
-                    "complete_lessons": 2,
-                    "lessons": [
-                        {"name": "Creación y uso de funciones", "type": "video"},
-                        {"name": "Argumentos, retorno y ámbito", "type": "article"},
-                        {"name": "Módulos y paquetes nativos", "type": "video"},
-                    ],
-                },
-                {
-                    "id": 5,
-                    "name": "Python práctico",
-                    "total_lessons": 3,
-                    "complete_lessons": 0,
-                    "lessons": [
-                        {"name": "Trabajo con archivos", "type": "video"},
-                        {"name": "Errores y excepciones", "type": "article"},
-                        {"name": "Mini-proyecto final", "type": "video"},
-                    ],
-                },
-            ],
-        }
-    ]
+            {
+                'id': 2,
+                'name': 'Fundamentos del lenguaje',
+                'lessons': [
+                    {
+                        'name': 'Variables, tipos de datos y operadores',
+                        'type': 'video'
+                    },
+                    {
+                        'name': 'Estructuras condicionales',
+                        'type': 'video'
+                    },
+                    {
+                        'name': 'Bucles y control de flujo',
+                        'type': 'article'
+                    }
+                ]
+            },
+            {
+                'id': 3,
+                'name': 'Colecciones y manejo de datos',
+                'lessons': [
+                    {
+                        'name': 'Listas y tuplas',
+                        'type': 'video'
+                    },
+                    {
+                        'name': 'Diccionarios y conjuntos',
+                        'type': 'video'
+                    },
+                    {
+                        'name': 'Comprensión de listas',
+                        'type': 'article'
+                    }
+                ]
+            },
+            {
+                'id': 4,
+                'name': 'Funciones y módulos',
+                'lessons': [
+                    {
+                        'name': 'Creación y uso de funciones',
+                        'type': 'video'
+                    },
+                    {
+                        'name': 'Argumentos, retorno y ámbito',
+                        'type': 'article'
+                    },
+                    {
+                        'name': 'Módulos y paquetes nativos',
+                        'type': 'video'
+                    }
+                ]
+            },
+            {
+                'id': 5,
+                'name': 'Python práctico',
+                'lessons': [
+                    {
+                        'name': 'Trabajo con archivos',
+                        'type': 'video'
+                    },
+                    {
+                        'name': 'Errores y excepciones',
+                        'type': 'article'
+                    },
+                    {
+                        'name': 'Mini-proyecto final',
+                        'type': 'video'
+                    }
+                ]
+            }
+        ]
+    }
 
     return render(request, 'courses/course_detail.html', {
         'course': course
     })
 
+
 def course_lessons(request):
-    pass
+    lesson = {
+        'course_title': 'Django Aplicaciones',
+        'course_progress': 30,
+        'course_content': [
+            {
+                'id': 1,
+                'name': 'Introducción al curso',
+                'total_lessons': 6,
+                'complete_lessons': 3,
+                'lessons': [
+                    {
+                        'name': '¿Qué aprenderás en el curso?',
+                        'type': 'video'
+                    },
+                    {
+                        'name': '¿Cómo usar la plataforma?',
+                        'type': 'article'
+                    }
+                ]
+            },
+            {
+                'id': 2,
+                'name': 'Django principios',
+                'total_lessons': 12,
+                'complete_lessons': 2,
+                'lessons': [
+                    {
+                        'name': '¿Qué aprenderás en el curso?',
+                        'type': 'video'
+                    },
+                    {
+                        'name': '¿Cómo usar la plataforma?',
+                        'type': 'article'
+                    }
+                ]
+            }
+        ]
+    }
+    return render(request, 'courses/course_lessons.html',
+        {
+            'lesson': lesson
+        })
